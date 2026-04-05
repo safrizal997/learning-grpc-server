@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.myproject.learning.grpc.server.proto";
+
+package hello;
+
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc GetUserDetail (GetUserDetailRequest) returns (GetUserDetailResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+message GetUserDetailRequest {
+  string user_id = 1;
+}
+
+message GetUserDetailResponse {
+  string user_id = 1;
+  string name = 2;
+  string email = 3;
+  int32 age = 4;
+  string phone = 5;
+}
